@@ -11,6 +11,8 @@ use crate::single_kes::{Sum0CompactKes, Sum0CompactKesSig, Sum0Kes, Sum0KesSig};
 use crate::traits::{KesCompactSig, KesSig, KesSk};
 use std::cmp::Ordering;
 
+use wasm_bindgen::prelude::*;
+
 #[cfg(feature = "serde_enabled")]
 use serde::{Deserialize, Serialize};
 
@@ -245,6 +247,7 @@ macro_rules! sum_compact_kes {
         #[doc=$doc]
         pub struct $name<'a>(&'a mut [u8]);
 
+        #[wasm_bindgen]
         #[derive(Debug, Clone, Copy, PartialEq, Eq)]
         #[cfg_attr(feature = "serde_enabled", derive(Serialize, Deserialize))]
         /// Structure that represents a KES signature.
