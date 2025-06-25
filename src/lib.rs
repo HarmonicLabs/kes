@@ -48,6 +48,8 @@ pub mod kes;
 mod single_kes;
 pub mod traits;
 
+pub mod wasm;
+
 #[cfg(feature = "serde_enabled")]
 #[macro_use]
 extern crate serde_with;
