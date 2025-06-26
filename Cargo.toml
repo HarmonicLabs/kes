@@ -31,6 +31,9 @@ default = []
 serde_enabled = ["ed25519-dalek/serde", "serde", "serde_with"]
 sk_clone_enabled = []
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
 [[bench]]
 harness = false
 name = "mmm-sumed25519"
