@@ -1,6 +1,6 @@
 use crate::kes::{Sum6Kes, Sum6KesSig};
 use crate::traits::{KesSig, KesSk};
-use crate::common::{PublicKey, SIGMA_SIZE};
+use crate::common::PublicKey;
 
 use wasm_bindgen::prelude::*;
 
@@ -33,4 +33,9 @@ pub fn sign(skey: &mut [u8], msg: &[u8]) -> WasmSignature {
 #[wasm_bindgen]
 pub fn verify(sig: &mut [u8], period: u32, pk: &[u8], msg: &[u8]) -> bool {
     Sum6KesSig::from_bytes(sig).unwrap().verify(period, &PublicKey::from_bytes(pk).unwrap(), msg).is_ok()
+}
+
+#[wasm_bindgen(start)]
+pub fn start() -> Result<(), JsValue> {
+    Ok(())
 }
