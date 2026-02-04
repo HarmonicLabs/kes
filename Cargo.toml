@@ -37,6 +37,3 @@ crate-type = ["cdylib", "rlib"]
 [[bench]]
 harness = false
 name = "mmm-sumed25519"
-
-[lib]
-crate-type = ["cdylib", "rlib"]
